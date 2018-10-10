@@ -1,8 +1,8 @@
 <?php
 
 // Define some constants
-define( "RECIPIENT_NAME", "John Doe" );
-define( "RECIPIENT_EMAIL", "mail@mail.com" );
+define( "RECIPIENT_NAME", "Info" );
+define( "RECIPIENT_EMAIL", "info@adimprovements.com" );
 
 // Read the form values
 $success = false;
@@ -32,7 +32,7 @@ $body .= 'message: ' . "\r\n" . $message;
 // If all values exist, send the email
 if ( $name && $senderEmail && $message ) {
   $recipient = RECIPIENT_NAME . " <" . RECIPIENT_EMAIL . ">";
-  $headers = "From: " . $name . " <" . $senderEmail . ">";  
+  $headers = "From: " . $name . " <" . $senderEmail . ">";
   $success = mail( $recipient, $mail_subject, $body, $headers );
   echo "<div class='inner success'><p class='success'>Thanks for contacting us. We will contact you ASAP!</p></div><!-- /.inner -->";
 }else {
